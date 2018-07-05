@@ -18,6 +18,7 @@ public class ClinicRunner {
         System.out.println(clinic.chengeId("Bob","Brob"));
         System.out.println(clinic.findClientByPetName("Bro").getId());
         System.out.println(clinic.findClientByPetName("TomFord").getId());
+        clinic.showAll();
 
 
     }

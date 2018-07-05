@@ -59,6 +59,11 @@ return "Пет не найден";
     }
 
 
+    public void showAll(){
+        for (int i=0; i< clients.length - 1; i++){
+            System.out.println(clients[i].getId() + ". her pet - "+ clients[i].getPetName());
+        }
+    }
 
 
 
