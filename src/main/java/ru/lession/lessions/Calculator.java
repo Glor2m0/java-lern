@@ -1,3 +1,4 @@
+package ru.lession.lessions;
 /*
  класс реализует калькулятор.
  */
@@ -24,7 +25,7 @@ public class Calculator {
     @return результат вычисления
 */
 
-    publicint getRsult(){
+    public int getRsult(){
         return this.result;
     }
 
@@ -34,6 +35,10 @@ public class Calculator {
 
     public void cleanResult(){
         this.result = 0;
+    }
+
+    public void div (int a, int b){
+        this.result = a / b;
     }
 
 }
