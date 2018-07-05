@@ -1,7 +1,7 @@
 package ru.lession.lessions;
 
 public class Pet {
-    private final String petName;
+    private String petName;
 
     public Pet(String petName) {
         this.petName = petName;
@@ -14,6 +14,10 @@ public class Pet {
 
     public String getPetNam() {
         return this.petName;
+    }
+
+    public void setPetName(String newPetName){
+        this.petName = newPetName;
     }
 }
 
@@ -48,6 +52,7 @@ class CatDog extends Pet {
     }
 
     public CatDog(Cat cat, Dog dog){
+        super.setPetName(cat.getPetNam() + dog.getPetNam());
 
     }
 }

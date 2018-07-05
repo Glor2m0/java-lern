@@ -27,18 +27,38 @@ public class Clinic {
                if (petName.equals(clients[i].getPetName())){
                    return clients[i];
                }
-           } return  clients[0];
+           } return  new Client("Клиент не найден", new Pet ("Пет не найден"));
     }
 
 
-    public Client  findPetByClientId (String clientName){
+    public Client  findPetByClientId (final String id){
         for ( int i=0; i < clients.length - 1; i++){
-            if (clientName.equals(clients[i].getId())){
+            if (id.equals(clients[i].getId())){
                 return clients[i];
             }
-        } return  clients[0];
+        } return  new Client("Клиент не найден", new Pet ("Пет не найден"));
 
     }
+
+
+public String chengePetName (String oldPetName, String newPetName){
+       if (findClientByPetName(oldPetName).getPetName().equals(oldPetName)){
+           findClientByPetName(oldPetName).setPet(newPetName);
+           return ("New pet name is " + findClientByPetName(newPetName).getPetName());
+       }
+return "Пет не найден";
+}
+
+
+    public String chengeId (String oldId, String newId){
+        if (findPetByClientId(oldId).getId().equals(oldId)){
+            findPetByClientId(oldId).setId(newId);
+            return ("New id is " + findPetByClientId(newId).getId());
+        }
+        return "Id не найден";
+    }
+
+
 
 
 

@@ -1,7 +1,7 @@
 package ru.lession.lessions;
 
 public class Client {
-    private final String id;
+    private  String id;
     private final Pet pet;
 
     public Client(String id, Pet pet){
@@ -16,5 +16,13 @@ public class Client {
 
     public String getId() {
         return this.id;
+    }
+
+    public void setPet(String newPetName){
+        this.pet.setPetName(newPetName);
+    }
+
+    public void setId(String newId){
+        this.id = newId;
     }
 }
