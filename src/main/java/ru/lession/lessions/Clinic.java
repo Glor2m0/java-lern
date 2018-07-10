@@ -23,21 +23,31 @@ public class Clinic {
     }
 
     public Client findClientByPetName(final String petName){
-           for ( int i=0; i < clients.length - 1; i++){
-               if (petName.equals(clients[i].getPetName())){
-                   return clients[i];
-               }
-           } return  new Client("Клиент не найден", new Pet ("Пет не найден"));
+        try {
+            for (int i = 0; i < clients.length - 1; i++) {
+                if (petName.equals(clients[i].getPetName())) {
+                    return clients[i];
+                }
+            }
+
+        }catch (NullPointerException Exc){
+            System.out.println("Клиентов нет");
+        }
+        return new Client("", new Pet(""));
     }
 
 
     public Client  findPetByClientId (final String id){
-        for ( int i=0; i < clients.length - 1; i++){
-            if (id.equals(clients[i].getId())){
-                return clients[i];
+        try {
+            for (int i = 0; i < clients.length - 1; i++) {
+                if (id.equals(clients[i].getId())) {
+                    return clients[i];
+                }
             }
-        } return  new Client("Клиент не найден", new Pet ("Пет не найден"));
-
+        }catch (NullPointerException Exc){
+            System.out.println("Клиентов Нет");
+        }
+            return  new Client("", new Pet (""));
     }
 
 

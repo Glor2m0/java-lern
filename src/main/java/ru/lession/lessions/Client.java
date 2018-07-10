@@ -1,5 +1,7 @@
 package ru.lession.lessions;
 
+import java.util.Objects;
+
 public class Client {
     private  String id;
     private final Pet pet;
@@ -24,5 +26,29 @@ public class Client {
 
     public void setId(String newId){
         this.id = newId;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "id='" + id + '\'' +
+                ", pet=" + pet +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Client client = (Client) o;
+        return Objects.equals(id, client.id) &&
+                Objects.equals(pet, client.pet);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(id, pet);
     }
 }

@@ -1,5 +1,7 @@
 package ru.lession.lessions;
 
+import java.util.Objects;
+
 public class Pet {
     private String petName;
 
@@ -18,6 +20,27 @@ public class Pet {
 
     public void setPetName(String newPetName){
         this.petName = newPetName;
+    }
+
+    @Override
+    public String toString() {
+        return "Pet{" +
+                "petName='" + petName + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Pet pet = (Pet) o;
+        return Objects.equals(petName, pet.petName);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(petName);
     }
 }
 
