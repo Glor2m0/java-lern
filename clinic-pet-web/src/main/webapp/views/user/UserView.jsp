@@ -29,5 +29,7 @@
         </tr>
     </c:forEach>
 </table>
+<a href="${pageContext.servletContext.contextPath}/views/user/CreateClient.jsp">Добавить клиента</a>
+<a href="${pageContext.servletContext.contextPath}/views/user/ClientsView.jsp">Показать клиентов клииники</a>
 </body>
 </html>

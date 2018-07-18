@@ -2,7 +2,6 @@ package ru.lesson.store;
 
 import ru.lesson.models.User;
 
-import javax.jws.soap.SOAPBinding;
 import java.util.Collection;
 import java.util.concurrent.ConcurrentHashMap;
 
