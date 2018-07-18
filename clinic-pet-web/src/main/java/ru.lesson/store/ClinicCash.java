@@ -1,6 +1,8 @@
 package ru.lesson.store;
 
 import ru.lesson.lessons.Client;
+import ru.lesson.lessons.Clinic;
+import ru.lesson.lessons.Pet;
 
 import java.util.Collection;
 import java.util.concurrent.ConcurrentHashMap;
@@ -31,4 +33,13 @@ public class ClinicCash {
     public Client get(final int id) {
         return this.clients.get(id);
     }
+
+    public Client findByName (String name){
+
+        for (int i = 0; i < clients.size(); i++) {
+            if(name.equals(CLINIC.get(i).getClientName())){ return CLINIC.get(i);
+            }
+        } return new Client (0,"none", new Pet("none"));
+    }
+
 }

@@ -21,7 +21,7 @@
     </tr>
     <c:forEach items="${clients}" var="client" varStatus="status">
         <tr valign="top">
-            <td>${client.getClientName} </td>
+            <td>${client.getClientName()} </td>
             <td>${client.clientName}</td>
             <td>
                 <a href="${pageContext.servletContext.contextPath}/user/edit?id=${client.id}">Редактировать</a>
@@ -30,6 +30,6 @@
         </tr>
     </c:forEach>
 </table>
-<a href="${pageContext.servletContext.contextPath}/views/user/UserView.jsp">Назад</a>
+<a href="${pageContext.servletContext.contextPath}/user/view">Назад</a>
 </body>
 </html>
